@@ -5,11 +5,13 @@ and running on most Linux distros as well as NixOs using C++17
 
 ## Setup
 
+### NixOs
+
 Run `nix-shell` beforehand unless the project is being loaded in
 vscode/vscodium and the [Nix Extension Pack](https://marketplace.visualstudio.com/items?itemName=pinage404.nix-extension-pack)
 extension is installed, then this will be done automatically
 
-If on NixOs omit the `-DFETCH_GLFW` flag _(this is optional and can be arbitrarily set)_ when running `cmake`;
+Omit the `-DFETCH_GLFW` flag _(this is optional and can be arbitrarily set)_ when running `cmake`;
 However the `-DFETCH_GLM` flag is required to be set to `TRUE` as `glm` when specified
 as a `nativeBuildInput` in `shell.nix` results in a **linker error** when the project is built
 
