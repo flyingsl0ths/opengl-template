@@ -1,17 +1,18 @@
 list(APPEND STB "${CMAKE_SOURCE_DIR}/ext/stb/stb_image.h" "stb_def.h")
 
-list(APPEND GLAD "glad/glad.h" "glad/glad.c" "glad/khrplatform.h")
+list(APPEND GLAD "glad/glad.c" "glad/glad.h" "glad/khrplatform.h")
 
 list(
   APPEND
   UTILS
   "utils/buffers.hpp"
-  "utils/files.hpp"
   "utils/files.cpp"
-  "utils/shader.hpp"
+  "utils/files.hpp"
   "utils/shader.cpp"
+  "utils/shader.hpp"
+  "utils/shapes.cpp"
   "utils/shapes.hpp"
-  "utils/shapes.cpp")
+  "utils/time.hpp")
 
 add_library(glaze STATIC common.hpp ${GLAD} ${STB} ${UTILS})
 
