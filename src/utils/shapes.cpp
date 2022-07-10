@@ -12,7 +12,7 @@ triangle_t make_triangle(bool const keep_vertices)
 {
     using vertex_array_t = std::array<f32, TRIANGLE_VERTEX_DATA_SIZE>;
 
-    constexpr vertex_array_t vertices = {
+    constexpr vertex_array_t VERTICES = {
         // clang-format off
         -0.5F, -0.5F, 0.0F, // left  
          0.5F, -0.5F, 0.0F, // right 
@@ -27,8 +27,8 @@ triangle_t make_triangle(bool const keep_vertices)
     glBindBuffer(GL_ARRAY_BUFFER, triangle_vbo);
 
     glBufferData(GL_ARRAY_BUFFER,
-                 vertices.size() * sizeof(f32),
-                 vertices.data(),
+                 VERTICES.size() * sizeof(f32),
+                 VERTICES.data(),
                  GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
@@ -37,7 +37,7 @@ triangle_t make_triangle(bool const keep_vertices)
 
     return {triangle_vbo,
             3,
-            (keep_vertices ? std::optional<vertex_array_t>(vertices)
+            (keep_vertices ? std::optional<vertex_array_t>(VERTICES)
                            : std::optional<vertex_array_t>())};
 }
 

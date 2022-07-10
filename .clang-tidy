@@ -21,8 +21,6 @@ CheckOptions:
       value: "4294967295"
     - key: cert-dcl16-c.NewSuffixes
       value: "L;LL;LU;LLU"
-    - key: readability-identifier-naming.GetConfigPerFile
-      value: "true"
     - key: readability-inconsistent-declaration-parameter-name.Strict
       value: "false"
     - key: modernize-use-default-member-init.UseAssignment
@@ -45,6 +43,36 @@ CheckOptions:
       value: "false"
     - key: readability-identifier-naming.AggressiveDependentMemberLookup
       value: "false"
+    - key: readability-identifier-naming.ConstantCase
+      value: "UPPER_CASE"
+    - key: readability-identifier-naming.ConstexprVariableCase
+      value: "UPPER_CASE"
+    - key: readability-identifier-naming.LocalConstantCase
+      value: "lower_case"
+    - key: readability-identifier-naming.EnumCase
+      value: "lower_case"
+    - key: readability-identifier-naming.ScopedEnumConstantCase
+      value: "UPPER_CASE"
+    - key: readability-identifier-naming.ClassCase
+      value: "lower_case"
+    - key: readability-identifier-naming.ClassConstantCase
+      value: "UPPER_CASE"
+    - key: readability-identifier-naming.ClassMemberPrefix
+      value: "m_"
+    - key: readability-identifier-naming.ClassMemberCase
+      value: "lower_case"
+    - key: readability-identifier-naming.ClassMethodCase
+      value: "lower_case"
+    - key: readability-identifier-naming.StaticConstantCase
+      value: "UPPER_CASE"
+    - key: readability-identifier-naming.FunctionCase
+      value: "lower_case"
+    - key: readability-identifier-naming.ConstantParameterCase
+      value: "lower_case"
+    - key: readability-identifier-naming.ParameterCase
+      value: "lower_case"
+    - key: readability-suspicious-call-argument.MinimumIdentifierNameLength
+      value: "3"
     - key: readability-suspicious-call-argument.Equality
       value: "true"
     - key: readability-redundant-smartptr-get.IgnoreMacros
@@ -83,8 +111,6 @@ CheckOptions:
       value: llvm
     - key: readability-function-cognitive-complexity.DescribeBasicIncrements
       value: "true"
-    - key: readability-suspicious-call-argument.MinimumIdentifierNameLength
-      value: "3"
     - key: modernize-loop-convert.NamingStyle
       value: CamelCase
     - key: modernize-loop-convert.MakeReverseRangeFunction
@@ -96,8 +122,6 @@ CheckOptions:
     - key: readability-suspicious-call-argument.SubstringDissimilarBelow
       value: "40"
     - key: performance-for-range-copy.WarnOnAllAutoCopies
-      value: "false"
-    - key: readability-identifier-naming.IgnoreFailedSplit
       value: "false"
     - key: modernize-pass-by-value.IncludeStyle
       value: llvm
@@ -226,8 +250,6 @@ CheckOptions:
     - key: modernize-use-default-member-init.IgnoreMacros
       value: "true"
     - key: llvm-qualified-auto.AddConstToQualified
-      value: "false"
-    - key: readability-identifier-naming.IgnoreMainLikeFunctions
       value: "false"
     - key: google-readability-function-size.StatementThreshold
       value: "800"
