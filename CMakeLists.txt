@@ -6,10 +6,7 @@ option(FETCH_GLM "Fetch glm" OFF)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if("${CMAKE_BUILD_TYPE}" STREQUAL "")
-  message(STATUS "Building in debug mode")
-  set(CMAKE_BUILD_TYPE Debug)
-  message(STATUS "Exporting compile commands")
-  set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+  set(CMAKE_BUILD_TYPE Debug) # ensure CMAKE_BUILD_TYPE is not empty
 endif()
 
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
@@ -27,17 +24,12 @@ project(
 
 add_library(compile-options INTERFACE)
 
-if(NOT MSVC)
-  target_compile_options(
-    compile-options INTERFACE "-Wextra;-Wall;-Werror;-Wunused-local-typedefs")
-endif()
+target_compile_options(
+  compile-options INTERFACE "-Wextra;-Wall;-Werror;-Wunused-local-typedefs")
 
 include("cmake/git.cmake")
 
 find_package(Git REQUIRED)
-
-message(STATUS "Fetching glfw: ${FETCH_GLFW}")
-message(STATUS "Fetching glm: ${FETCH_GLM}")
 
 set(submodules_to_update "ext/forest" "ext/stb")
 
@@ -49,6 +41,8 @@ if(FETCH_GLFW)
   list(APPEND submodules_to_update "ext/glfw")
 endif()
 
+message(STATUS "Fetching glfw: ${FETCH_GLFW}")
+message(STATUS "Fetching glm: ${FETCH_GLM}")
 git_update_submodules(${submodules_to_update})
 
 if(FETCH_GLFW)

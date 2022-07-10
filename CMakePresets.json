@@ -1,0 +1,241 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "description": "Default build configuration using Ninja",
+            "generator": "Ninja",
+            "binaryDir": "build/default",
+            "condition": {
+                "type": "equals",
+                "lhs": "Linux",
+                "rhs": "${hostSystemName}"
+            }
+        },
+        {
+            "name": "ninja-clang",
+            "description": "Base configuration using Ninja / clang",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            }
+        },
+        {
+            "name": "nc-glm-debug",
+            "description": "Debug build using Ninja/clang (Only glm submodule)",
+            "binaryDir": "build/db",
+            "inherits": "ninja-clang",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "FETCH_GLM": "TRUE",
+                "FETCH_GLFW": "FALSE"
+            }
+        },
+        {
+            "name": "nc-gsm-debug",
+            "description": "Debug build using Ninja/clang (Only submodules)",
+            "binaryDir": "build/db",
+            "inherits": "ninja-clang",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "FETCH_GLM": "TRUE",
+                "FETCH_GLFW": "TRUE"
+            }
+        },
+        {
+            "name": "nc-debug",
+            "description": "Debug build using Ninja/clang",
+            "binaryDir": "build/db",
+            "inherits": "ninja-clang",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        },
+        {
+            "name": "nc-glm-release",
+            "description": "Release build using Ninja/clang (Only glm submodule)",
+            "inherits": "ninja-clang",
+            "binaryDir": "build/rl",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "OFF",
+                "FETCH_GLM": "TRUE",
+                "FETCH_GLFW": "FALSE"
+            }
+        },
+        {
+            "name": "nc-gsm-release",
+            "description": "Release build using Ninja/clang (Only submodules)",
+            "inherits": "ninja-clang",
+            "binaryDir": "build/rl",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "OFF",
+                "FETCH_GLM": "TRUE",
+                "FETCH_GLFW": "TRUE"
+            }
+        },
+        {
+            "name": "nc-release",
+            "description": "Release build using Ninja/clang",
+            "inherits": "ninja-clang",
+            "binaryDir": "build/rl",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "nc-glm-relw",
+            "description": "RelWithDebInfo build using Ninja/clang (Only glm submodule)",
+            "inherits": "ninja-clang",
+            "binaryDir": "build/rw",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "OFF",
+                "FETCH_GLM": "TRUE",
+                "FETCH_GLFW": "FALSE"
+            }
+        },
+        {
+            "name": "nc-gsm-relw",
+            "description": "RelWithDebInfo build using Ninja/clang (Only submodules)",
+            "inherits": "ninja-clang",
+            "binaryDir": "build/rw",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "OFF",
+                "FETCH_GLM": "TRUE",
+                "FETCH_GLFW": "TRUE"
+            }
+        },
+        {
+            "name": "nc-relw",
+            "description": "RelWithDebInfo build using Ninja/clang",
+            "inherits": "ninja-clang",
+            "binaryDir": "build/rw",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
+            "name": "nc-ubsan",
+            "description": "UBsan debug build using Ninja/clang",
+            "inherits": "nc-debug",
+            "binaryDir": "build/ubsan",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_CXX_FLAGS": "-fsanitize=undefined"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default"
+        },
+        {
+            "name": "ninja-clang",
+            "configurePreset": "ninja-clang"
+        },
+        {
+            "name": "nc-glm-debug",
+            "configurePreset": "nc-glm-debug"
+        },
+        {
+            "name": "nc-gsm-debug",
+            "configurePreset": "nc-gsm-debug"
+        },
+        {
+            "name": "nc-debug",
+            "configurePreset": "nc-debug"
+        },
+        {
+            "name": "nc-glm-release",
+            "configurePreset": "nc-glm-release"
+        },
+        {
+            "name": "nc-gsm-release",
+            "configurePreset": "nc-gsm-release"
+        },
+        {
+            "name": "nc-release",
+            "configurePreset": "nc-release"
+        },
+        {
+            "name": "nc-glm-relw",
+            "configurePreset": "nc-glm-relw"
+        },
+        {
+            "name": "nc-gsm-relw",
+            "configurePreset": "nc-gsm-relw"
+        },
+        {
+            "name": "nc-relw",
+            "configurePreset": "nc-relw"
+        },
+        {
+            "name": "nc-ubsan",
+            "configurePreset": "nc-ubsan"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default"
+        },
+        {
+            "name": "ninja-clang",
+            "configurePreset": "ninja-clang"
+        },
+        {
+            "name": "nc-glm-debug",
+            "configurePreset": "nc-glm-debug"
+        },
+        {
+            "name": "nc-gsm-debug",
+            "configurePreset": "nc-gsm-debug"
+        },
+        {
+            "name": "nc-debug",
+            "configurePreset": "nc-debug"
+        },
+        {
+            "name": "nc-glm-release",
+            "configurePreset": "nc-glm-release"
+        },
+        {
+            "name": "nc-gsm-release",
+            "configurePreset": "nc-gsm-release"
+        },
+        {
+            "name": "nc-release",
+            "configurePreset": "nc-release"
+        },
+        {
+            "name": "nc-glm-relw",
+            "configurePreset": "nc-glm-relw"
+        },
+        {
+            "name": "nc-gsm-relw",
+            "configurePreset": "nc-gsm-relw"
+        },
+        {
+            "name": "nc-relw",
+            "configurePreset": "nc-relw"
+        },
+        {
+            "name": "nc-ubsan",
+            "configurePreset": "nc-ubsan"
+        }
+    ]
+}
