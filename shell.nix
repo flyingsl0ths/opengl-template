@@ -1,16 +1,16 @@
 { pkgs ? import <nixpkgs> { } }:
 with pkgs; mkShell {
   nativeBuildInputs = [
-    cmake
-    clang-tools_14
     clang_14
+    clang-tools_14
+    cmake
     cmake-format
+    cmake-language-server # OPTIONAL
     extra-cmake-modules
     glfw
     ninja
+    nixpkgs-fmt # OPTIONAL
     pkg-config
-    # OPTIONAL
-    nixpkgs-fmt
-    shfmt
+    shfmt # OPTIONAL
   ];
 }
