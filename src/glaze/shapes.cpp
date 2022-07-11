@@ -8,7 +8,7 @@
 namespace glaze::shapes
 {
 
-triangle_t make_triangle(bool const keep_vertices)
+triangle_t make_triangle(const bool keep_vertices)
 {
     using vertex_array_t = std::array<f32, TRIANGLE_VERTEX_DATA_SIZE>;
 
@@ -41,4 +41,4 @@ triangle_t make_triangle(bool const keep_vertices)
                            : std::optional<vertex_array_t>())};
 }
 
-} // namespace utils::shapes
+} // namespace glaze::shapes

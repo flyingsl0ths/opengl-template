@@ -20,12 +20,12 @@ project(
   ${NAME}
   VERSION 1.0.0
   DESCRIPTION ${DESCRIPTION}
-  LANGUAGES CXX C)
+  LANGUAGES CXX C
+)
 
 add_library(compile-options INTERFACE)
 
-target_compile_options(
-  compile-options INTERFACE "-Wextra;-Wall;-Werror;-Wunused-local-typedefs")
+target_compile_options(compile-options INTERFACE "-Wextra;-Wall;-Werror;-Wunused-local-typedefs")
 
 include("cmake/git.cmake")
 
@@ -62,3 +62,4 @@ add_subdirectory("ext/forest")
 add_subdirectory(src)
 
 add_subdirectory(app)
+

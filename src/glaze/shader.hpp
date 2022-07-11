@@ -105,4 +105,4 @@ u32 compile_shader(const shader_t& shader) noexcept;
 shader_compile_result_t
 make_shader_program(const std::vector<shader_t>& shaders) noexcept;
 
-} // namespace utils::shader
+} // namespace glaze::shader

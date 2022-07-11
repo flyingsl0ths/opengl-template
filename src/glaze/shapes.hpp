@@ -22,4 +22,4 @@ using triangle_t = std::
 /// @returns A tuple containing the triangle's VBO id and it's vertex count
 triangle_t make_triangle(bool keep_vertices = false);
 
-} // namespace utils::shapes
+} // namespace glaze::shapes

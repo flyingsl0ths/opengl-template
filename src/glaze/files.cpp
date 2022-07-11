@@ -41,4 +41,4 @@ std::string read_file(const std::string& file_path)
     return file_contents;
 }
 
-} // namespace utils::files
+} // namespace glaze::files

@@ -1,23 +1,23 @@
 #include <iostream>
 
 #include <common.hpp>
-#include <utils/buffers.hpp>
-#include <utils/files.hpp>
-#include <utils/shader.hpp>
-#include <utils/shapes.hpp>
+#include <glaze/buffers.hpp>
+#include <glaze/files.hpp>
+#include <glaze/shader.hpp>
+#include <glaze/shapes.hpp>
 
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 #include <forest/forest.hpp>
 
-std::string red_text(str const content)
+std::string red_text(const str content)
 {
     return std::string("<rgb=500><b>") + content.data();
 }
 
 void on_shader_program_compilation_failed(const std::vector<u32>& failures,
-                                          u32 const shader_program)
+                                          const u32 shader_program)
 {
     using namespace glaze;
 
@@ -81,7 +81,7 @@ s32 main(const s32 argc, const char* const argv[])
 
     constexpr s32 WINDOW_WIDTH {1280};
     constexpr s32 WINDOW_HEIGHT {720};
-    auto*         window = glfwCreateWindow(
+    auto* const   window = glfwCreateWindow(
         WINDOW_WIDTH, WINDOW_HEIGHT, "Hello World!!", nullptr, nullptr);
 
     if (window == nullptr)

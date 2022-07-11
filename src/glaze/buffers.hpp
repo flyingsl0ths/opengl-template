@@ -30,4 +30,4 @@ auto make_vbos() -> std::
     }
 }
 
-} // namespace utils
+} // namespace glaze::buffers
