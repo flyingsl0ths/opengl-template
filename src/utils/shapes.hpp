@@ -5,7 +5,7 @@
 
 #include <common.hpp>
 
-namespace utils::shapes
+namespace glaze::shapes
 {
 
 constexpr szt TRIANGLE_VERTEX_DATA_SIZE {9UL};

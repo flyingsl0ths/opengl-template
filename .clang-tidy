@@ -43,6 +43,8 @@ CheckOptions:
       value: "false"
     - key: readability-identifier-naming.AggressiveDependentMemberLookup
       value: "false"
+    - key: readability-identifier-naming.NamespaceCase
+      value: "lower_case"
     - key: readability-identifier-naming.ConstantCase
       value: "UPPER_CASE"
     - key: readability-identifier-naming.ConstexprVariableCase
@@ -89,7 +91,7 @@ CheckOptions:
       value: ""
     - key: modernize-use-bool-literals.IgnoreMacros
       value: "true"
-    - key: google-readability-namespace-comments.ShortNamespaceLines
+    - key: readability-namespace-comments.ShortNamespaceLines
       value: "10"
     - key: readability-suspicious-call-argument.SuffixSimilarAbove
       value: "30"
@@ -203,7 +205,7 @@ CheckOptions:
       value: "false"
     - key: readability-implicit-bool-conversion.AllowPointerConditions
       value: "false"
-    - key: google-readability-braces-around-statements.ShortStatementLines
+    - key: readability-braces-around-statements.ShortStatementLines
       value: "1"
     - key: modernize-make-unique.MakeSmartPtrFunction
       value: "std::make_unique"
@@ -233,7 +235,7 @@ CheckOptions:
       value: "false"
     - key: modernize-use-noexcept.UseNoexceptFalse
       value: "true"
-    - key: google-readability-namespace-comments.SpacesBeforeComments
+    - key: readability-namespace-comments.SpacesBeforeComments
       value: "2"
     - key: readability-function-cognitive-complexity.Threshold
       value: "25"
@@ -251,8 +253,8 @@ CheckOptions:
       value: "true"
     - key: llvm-qualified-auto.AddConstToQualified
       value: "false"
-    - key: google-readability-function-size.StatementThreshold
-      value: "800"
+    - key: readability-function-size.StatementThreshold
+      value: "50"
     - key: llvm-else-after-return.WarnOnConditionVariables
       value: "false"
     - key: readability-suspicious-call-argument.DiceSimilarAbove

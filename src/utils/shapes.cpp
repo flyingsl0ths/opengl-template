@@ -5,7 +5,7 @@
 
 #include <glad/glad.h>
 
-namespace utils::shapes
+namespace glaze::shapes
 {
 
 triangle_t make_triangle(bool const keep_vertices)

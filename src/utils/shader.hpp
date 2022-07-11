@@ -11,7 +11,7 @@
 
 #include <glad/glad.h>
 
-namespace utils::shader
+namespace glaze::shader
 {
 
 using shader_t                = std::pair<std::string, GLenum>;

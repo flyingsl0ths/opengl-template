@@ -4,7 +4,7 @@
 
 #include <common.hpp>
 
-namespace glaze::utils::time
+namespace glaze::time
 {
 
 using timer         = std::chrono::steady_clock;

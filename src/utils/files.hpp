@@ -4,7 +4,7 @@
 
 #include <common.hpp>
 
-namespace utils::files
+namespace glaze::files
 {
 
 std::string read_file(const std::string& file_path);

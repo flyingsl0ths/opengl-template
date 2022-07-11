@@ -19,7 +19,7 @@ std::string red_text(str const content)
 void on_shader_program_compilation_failed(const std::vector<u32>& failures,
                                           u32 const shader_program)
 {
-    using namespace utils;
+    using namespace glaze;
 
     constexpr szt SHADER_LOG_SIZE {512UL};
 
@@ -56,7 +56,7 @@ void on_shader_program_compilation_failed(const std::vector<u32>& failures,
 
 s32 main(const s32 argc, const char* const argv[])
 {
-    using namespace utils;
+    using namespace glaze;
 
     if (argc < 2)
     {

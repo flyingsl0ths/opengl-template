@@ -1,6 +1,6 @@
 #include "shader.hpp"
 
-namespace utils::shader
+namespace glaze::shader
 {
 
 std::optional<shader_t> make_shader(std::string  source,

@@ -7,7 +7,7 @@
 
 #include <glad/glad.h>
 
-namespace utils
+namespace glaze::buffers
 {
 
 /// @brief Constructs a single or multiple VBO(s)
