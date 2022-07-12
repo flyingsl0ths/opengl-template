@@ -1,5 +1,5 @@
 ---
-Checks: "clang-diagnostic-*,clang-analyzer-*,clang-analyzer-*,modernize-*,performance-*,readability-*,cppcoreguidelines-*"
+Checks: "clang-diagnostic-*,clang-analyzer-*,clang-analyzer-*,modernize-*,performance-*,readability-*,cppcoreguidelines-*,-modernize-use-trailing-return-type"
 WarningsAsErrors: ""
 HeaderFilterRegex: ""
 AnalyzeTemporaryDtors: false
