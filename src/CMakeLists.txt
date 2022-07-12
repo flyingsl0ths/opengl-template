@@ -4,7 +4,7 @@ list(APPEND GLAD "glad/glad.c" "glad/glad.h" "glad/khrplatform.h")
 
 list(
   APPEND
-  UTILS
+  GLAZE
   "glaze/buffers.hpp"
   "glaze/files.cpp"
   "glaze/files.hpp"
@@ -12,16 +12,13 @@ list(
   "glaze/shader.hpp"
   "glaze/shapes.cpp"
   "glaze/shapes.hpp"
-  "glaze/time.hpp"
-)
+  "glaze/time.hpp")
 
-add_library(glaze STATIC common.hpp ${GLAD} ${STB} ${UTILS})
+add_library(glaze STATIC common.hpp ${GLAD} ${STB} ${GLAZE})
 
 target_compile_features(glaze PRIVATE cxx_std_17)
 
-target_include_directories(
-  glaze PUBLIC "${CMAKE_SOURCE_DIR}/ext"
-  "${CMAKE_SOURCE_DIR}/src"
-)
+target_include_directories(glaze PUBLIC "${CMAKE_SOURCE_DIR}/ext"
+                                        "${CMAKE_SOURCE_DIR}/src")
 
 target_link_libraries(glaze PUBLIC compile-options glm glfw)
