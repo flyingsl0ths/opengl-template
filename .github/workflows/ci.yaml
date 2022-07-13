@@ -14,7 +14,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Init
-              run: sudo apt install xorg-dev ninja-build
+              run: sudo apt install -yqq ninja-build xorg-dev
             - name: Configure
               run: cmake --preset=nc-gsm-debug -S .
             - name: Build
