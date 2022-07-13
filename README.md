@@ -1,5 +1,7 @@
 # OpenGL Starter Template
 
+![Build Status](https://github.com/flyingsl0ths/opengl-template/actions/workflows/ci.yaml/badge.svg)
+
 A simple OpenGL (3.3.0) template used to get something up
 and running on most Linux distros as well as NixOs using C++17
 
