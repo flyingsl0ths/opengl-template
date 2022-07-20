@@ -103,6 +103,6 @@ u32 compile_shader(const shader_t& shader) noexcept;
 /// x may be: the program's id
 /// y may be: a vector of the id's of shaders that failed to compile or nothing
 shader_compile_result_t
-make_shader_program(const std::vector<shader_t>& shaders) noexcept;
+make_shader_program(const std::vector<shader_t>& shaders);
 
 } // namespace glaze::shader

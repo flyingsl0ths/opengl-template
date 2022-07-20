@@ -69,7 +69,7 @@ u32 compile_shader(const shader_t& shader) noexcept
 
     if (shader_id == SHADER_ERROR) { return SHADER_ERROR; }
 
-    auto* const source_code {shader.first.data()};
+    const auto* const source_code {shader.first.data()};
 
     glShaderSource(shader_id, 1, &source_code, nullptr);
 
@@ -79,7 +79,7 @@ u32 compile_shader(const shader_t& shader) noexcept
 }
 
 shader_compile_result_t
-make_shader_program(const std::vector<shader_t>& shaders) noexcept
+make_shader_program(const std::vector<shader_t>& shaders)
 {
 
     std::vector<u32> creations {};
