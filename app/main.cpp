@@ -113,11 +113,13 @@ s32 main(const s32 argc, const char* const argv[])
 
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-    auto const delete_objects = [](u32 const vao, u32 const vbo)
+    auto const delete_objects = [window](u32 const vao, u32 const vbo)
     {
         glDeleteVertexArrays(1, &vao);
 
         glDeleteBuffers(1, &vbo);
+
+        glfwDestroyWindow(window);
 
         glfwTerminate();
     };
