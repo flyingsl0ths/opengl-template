@@ -85,8 +85,7 @@ make_shader_program(const std::vector<shader_t>& shaders)
     std::vector<u32> creations {};
     creations.reserve(shaders.size());
 
-    using failed_compilations_t = std::vector<u32>;
-    failed_compilations_t failures {};
+    std::vector<u32> failures {};
 
     auto const on_compiled_shader =
         [&creations, &failures](const shader_t& shader)
@@ -100,9 +99,8 @@ make_shader_program(const std::vector<shader_t>& shaders)
     for (const auto& shader : shaders) { on_compiled_shader(shader); }
 
     return {compile_shader_program(creations, false),
-            (failures.empty()
-                 ? std::optional<failed_compilations_t>()
-                 : std::optional<failed_compilations_t>(failures))};
+            (failures.empty() ? std::optional<std::vector<u32>>()
+                              : std::optional<std::vector<u32>>(failures))};
 }
 
 } // namespace glaze::shader
