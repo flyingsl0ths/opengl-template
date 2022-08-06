@@ -54,7 +54,7 @@ void on_shader_program_compilation_failed(const std::vector<u32>& failures,
     glDeleteProgram(shader_program);
 }
 
-s32 main(const s32 argc, const char* const argv[])
+s32 main(const s32 argc, const char** const argv)
 {
     using namespace glaze;
 
@@ -105,7 +105,7 @@ s32 main(const s32 argc, const char* const argv[])
 
     glfwSetFramebufferSizeCallback(window, update_frame_buffer_size);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    if (gladLoadGLLoader((GLADloadproc)glfwGetProcAddress) == 0)
     {
         forest::print_to(stderr, red_text("Failed to initialize GLAD!\n"));
         return -1;
