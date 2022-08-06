@@ -164,7 +164,7 @@ s32 main(const s32 argc, const char** const argv)
         return -1;
     }
 
-    auto const process_input = [](GLFWwindow* window)
+    auto const process_input = [](GLFWwindow* const window)
     {
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         {
