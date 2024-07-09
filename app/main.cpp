@@ -151,10 +151,6 @@ s32 main(const s32 argc, const char** const argv)
         std::vector<shader::shader_t> {std::move(vertex_shader.value()),
                                        std::move(fragment_shader.value())});
 
-    vertex_shader.reset();
-
-    fragment_shader.reset();
-
     if (failures)
     {
         on_shader_program_compilation_failed(*failures, shader_program);
@@ -163,6 +159,8 @@ s32 main(const s32 argc, const char** const argv)
 
         return -1;
     }
+
+    glUseProgram(shader_program);
 
     auto const process_input = [](GLFWwindow* const window)
     {
@@ -179,12 +177,6 @@ s32 main(const s32 argc, const char** const argv)
         glClearColor(0.0F, 0.0F, 0.0F, 1.0F);
 
         glClear(GL_COLOR_BUFFER_BIT);
-
-        glUseProgram(shader_program);
-
-        glBindVertexArray(vao);
-
-        glBindBuffer(GL_ARRAY_BUFFER, triangle_vbo);
 
         glDrawArrays(GL_TRIANGLES, 0, triangle_vertex_count);
 
