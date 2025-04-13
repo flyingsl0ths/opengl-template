@@ -12,7 +12,7 @@ set(BUILD_SHARED_LIBS OFF)
 project(
   ${NAME}
   VERSION 1.0.0
-  DESCRIPTION ${DESCRIPTION})
+  DESCRIPTION ${DESCRIPTION} CXX C)
 
 option(FETCH_GLFW "Fetch glfw" OFF)
 option(FETCH_GLM "Fetch glm" OFF)
