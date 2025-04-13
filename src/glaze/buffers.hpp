@@ -7,27 +7,38 @@
 
 #include <glad/glad.h>
 
-namespace glaze::buffers
-{
+namespace glaze::buffers {
 
-/// @brief Constructs a single or multiple VBO(s)
-template <s32 total>
-auto make_vbos() -> std::
-    conditional_t<total == 1, u32, std::array<u32, static_cast<szt>(total)>>
-{
+template <GLsizei total>
+auto make_vbos()
+	-> std::conditional_t<total == 1, GLuint,
+						  std::array<GLuint, static_cast<usize>(total)>> {
 
-    if constexpr (total == 1)
-    {
-        u32 vbo {};
-        glGenBuffers(1, &vbo);
-        return vbo;
-    }
-    else
-    {
-        std::array<u32, static_cast<szt>(total)> vbo {};
-        glGenBuffers(total, vbo.data());
-        return vbo;
-    }
+	if constexpr (total == 1) {
+		GLuint vbo{};
+		glGenBuffers(1, &vbo);
+		return vbo;
+	} else {
+		std::array<GLuint, static_cast<usize>(total)> vbo{};
+		glGenBuffers(total, vbo.data());
+		return vbo;
+	}
+}
+
+template <GLsizei total>
+auto make_vaos()
+	-> std::conditional_t<total == 1, GLuint,
+						  std::array<GLuint, static_cast<usize>(total)>> {
+
+	if constexpr (total == 1) {
+		GLuint vao{};
+		glGenVertexArrays(1, &vao);
+		return vao;
+	} else {
+		std::array<GLuint, static_cast<usize>(total)> vaos{};
+		glGenVertexArrays(total, vaos.data());
+		return vaos;
+	}
 }
 
 } // namespace glaze::buffers

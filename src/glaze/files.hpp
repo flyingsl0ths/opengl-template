@@ -4,9 +4,8 @@
 
 #include <common.hpp>
 
-namespace glaze::files
-{
+namespace glaze::files {
 
-std::string read_file(const std::string& file_path);
+std::string read_file(std::string const& file_path) noexcept(false);
 
 } // namespace glaze::files

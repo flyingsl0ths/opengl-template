@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cd .. && build/exe "$(pwd)"
+cd .. && build/current_build/app/hello-gl "$(pwd)"

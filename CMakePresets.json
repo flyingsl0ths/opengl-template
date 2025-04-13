@@ -11,10 +11,8 @@
             "description": "Default build configuration using Ninja",
             "generator": "Ninja",
             "binaryDir": "build/default",
-            "condition": {
-                "type": "equals",
-                "lhs": "Linux",
-                "rhs": "${hostSystemName}"
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             }
         },
         {
@@ -33,7 +31,6 @@
             "inherits": "ninja-clang",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "FETCH_GLM": "TRUE",
                 "FETCH_GLFW": "FALSE"
             }
@@ -45,7 +42,6 @@
             "inherits": "ninja-clang",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "FETCH_GLM": "TRUE",
                 "FETCH_GLFW": "TRUE"
             }
@@ -56,8 +52,7 @@
             "binaryDir": "build/db",
             "inherits": "ninja-clang",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+                "CMAKE_BUILD_TYPE": "Debug"
             }
         },
         {
@@ -133,7 +128,6 @@
             "binaryDir": "build/ubsan",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_CXX_FLAGS": "-fsanitize=undefined"
             }
         }
