@@ -7,7 +7,7 @@
 ![Build Status](https://github.com/flyingsl0ths/opengl-template/actions/workflows/ci.yaml/badge.svg)
 
 A simple OpenGL (3.3.0) template used to get something up
-and running on most Linux distros using C++17
+and running on most Linux distros using C++20
 
 ## Setup
 
@@ -21,8 +21,6 @@ cmake --preset=<preset-name>
 cmake --build build/<preset-binary-dir>
 
 ln -s build/<preset-binary-dir>/compile_commands.json
-
-cd build && ln -s <preset-binary-dir>/app/hello-world exe && cd ..
 
 # See CmakePresets.json for possible values of <preset-binary-dir>
 ```
