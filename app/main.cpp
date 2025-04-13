@@ -20,6 +20,5 @@ s32 main(s32 const argc, char* const argv[]) {
 		forest::print_to(stderr, red_text(e.what()));
 		return -1;
 	}
-
 	return 0;
 }
