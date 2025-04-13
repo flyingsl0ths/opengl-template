@@ -4,8 +4,6 @@
   <img src="github-res/opengl.svg" width="100%" height="144">
 </p>
 
-![Build Status](https://github.com/flyingsl0ths/opengl-template/actions/workflows/ci.yaml/badge.svg)
-
 A simple OpenGL (3.3.0) template used to get something up
 and running on most Linux distros using C++20
 
