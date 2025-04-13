@@ -19,8 +19,7 @@ cmake --preset=<preset-name>
 cmake --build build/<preset-binary-dir>
 
 ln -s build/<preset-binary-dir>/compile_commands.json
-
-# See CmakePresets.json for possible values of <preset-binary-dir>
+ See CmakePresets.json for possible values of <preset-binary-dir>
 ```
 
 ## Running
